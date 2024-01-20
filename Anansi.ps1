@@ -3,21 +3,9 @@ $applicationsToClose = @("chrome", "msedge", "discord", "firefox", "WhatsApp", "
 
 # Attempt to close each application
 foreach ($app in $applicationsToClose) {
-    # Get all processes of the application
-    $processes = Get-Process | Where-Object { $_.MainWindowTitle -ne "" -and $_.ProcessName -like $app }
-    
-    # Close main window of each process found
-    foreach ($process in $processes) {
-        $process.CloseMainWindow()
-    }
+    # Get the process by name and force close
+    Get-Process $app -ErrorAction SilentlyContinue | Stop-Process -Force
 }
 
-# Force close any remaining processes immediately
-foreach ($app in $applicationsToClose) {
-    $processes = Get-Process | Where-Object { $_.MainWindowTitle -ne "" -and $_.ProcessName -like $app }
-    foreach ($process in $processes) {
-        $process | Stop-Process -Force
-    }
-}
-
+# Exit the script
 exit
