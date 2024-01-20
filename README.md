@@ -1,6 +1,7 @@
 **Anansi Script**
 
 **Description**
+
 Anansi Script is a PowerShell script designed to help users close specific applications quickly using a keyboard shortcut. This script is particularly useful for managing applications across different virtual desktops in Windows.
 
 **Getting Started**
