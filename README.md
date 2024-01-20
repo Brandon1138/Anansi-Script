@@ -30,7 +30,9 @@ Since batch file paths are system-specific, you'll need to create your own to ru
 Open Notepad; Enter the following three lines, replacing C:\path\to\Anansi.ps1 with your script's path:
 
 @echo off
+
 PowerShell -NoProfile -ExecutionPolicy Bypass -File "C:\path\to\Anansi.ps1"
+
 exit
 
 Now, save this file as RunAnansi.bat.
